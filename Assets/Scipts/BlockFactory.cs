@@ -20,7 +20,6 @@ public class BlockFactory : MonoBehaviour
         Block pingPongBlock = Instantiate(type.pingPongBlock);
         PingPongProcess sc = pingPongBlock.gameObject.AddComponent(typeof(PingPongProcess)) as PingPongProcess;
         sc._move(Vector3.left, Vector3.right);
-        //PingPongProcess pingpong = gameObject.AddComponent(typeof(PingPongProcess));
         return pingPongBlock;
     }
 }

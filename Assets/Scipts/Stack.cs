@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Stack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public BlockFactory factory;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        factory.generatePingPongBlock();
+        factory.generateStaticBlock();
     }
 }
