@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Block : MonoBehaviour
 {
     SpriteRenderer _sprite;
     BoxCollider2D _boxCol;
     // Start is called before the first frame update
+    public Bounds Bounds { get => _boxCol.bounds; set { _boxCol.offset = value.center; _boxCol.size = value.size; } }
     void Awake()
     {
         _sprite = this.GetComponent<SpriteRenderer>();
